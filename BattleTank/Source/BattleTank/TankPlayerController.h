@@ -27,8 +27,6 @@ public:
     UPROPERTY(EditDefaultsOnly)
     float LineTraceRange = 1000000.0f;
 
-	ATank* GetControlledTank() const;
-
 	void BeginPlay() override;
 
 	void Tick(float DeltaTime) override;
@@ -40,5 +38,9 @@ public:
     bool GetLookDirection(FVector2D ScreenLocation, FVector &LookDirection) const;
 
     bool GetLookVectorHitLocation(FVector LookDirection, FVector &HitLocation) const;
+
+protected:
+	UFUNCTION(BlueprintCallable)
+	ATank* GetControlledTank() const;
 	
 };
